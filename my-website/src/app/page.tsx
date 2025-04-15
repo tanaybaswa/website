@@ -42,7 +42,7 @@ export default function Home() {
             </p>
 
             <p>
-              Let's build a safer and stronger future together.
+              Let&apos;s build a safer and stronger future together.
             </p>
           </div>
           <SocialIconDeck />
