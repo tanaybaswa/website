@@ -128,7 +128,7 @@ export default function Contact() {
               </a>
               
               <a 
-                href="https://x.com/TanayBaswa"
+                href="https://x.com/Tanay_Baswa"
                 target="_blank"
                 rel="noopener noreferrer" 
                 className="flex items-center p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 transition-all hover:shadow-md"
