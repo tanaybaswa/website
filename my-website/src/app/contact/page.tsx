@@ -69,7 +69,8 @@ export default function Contact() {
         email: "",
         message: ""
       });
-    } catch (error) {
+    } catch (error: unknown) {
+      console.error('Form submission error:', error);
       setFormStatus({
         success: false,
         message: "There was an error sending your message. Please try again."
