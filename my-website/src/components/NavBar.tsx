@@ -27,6 +27,9 @@ const Navbar = () => {
                   <Link href="/" className={`${dmSans.className} hover:text-gray-600 transition-colors`}>
                     Work
                   </Link>
+                  <Link href="/resources" className={`${dmSans.className} hover:text-gray-600 transition-colors`}>
+                    Resources
+                  </Link>
                   <Link href="/" className={`${dmSans.className} hover:text-gray-600 transition-colors`}>
                     Contact
                   </Link>
