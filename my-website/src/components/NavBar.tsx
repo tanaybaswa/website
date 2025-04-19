@@ -30,7 +30,7 @@ const Navbar = () => {
                   <Link href="/resources" className={`${dmSans.className} hover:text-gray-600 transition-colors`}>
                     Resources
                   </Link>
-                  <Link href="/" className={`${dmSans.className} hover:text-gray-600 transition-colors`}>
+                  <Link href="/contact" className={`${dmSans.className} hover:text-gray-600 transition-colors`}>
                     Contact
                   </Link>
                 </div>
