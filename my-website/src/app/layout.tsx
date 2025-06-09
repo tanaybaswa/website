@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Tanay Baswa",
   description: "Tanay Baswa - AI Safety and Security Researcher",
+  icons: {
+    icon: '/yin_yang.png',
+  },
 };
 
 export default function RootLayout({
