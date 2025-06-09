@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
 
@@ -19,7 +20,7 @@ export interface BlogPost {
 }
 
 export interface BlogPostWithContent extends BlogPost {
-  mdxSource: any;
+  mdxSource: MDXRemoteSerializeResult;
 }
 
 // Ensure the posts directory exists

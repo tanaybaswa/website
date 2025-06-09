@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const SocialIconDeck = () => {
   return (
@@ -32,10 +33,12 @@ const SocialIconDeck = () => {
         aria-label="arXiv"
         target="_blank"
       >
-        <img 
+        <Image 
           src="/arxiv.svg" 
           alt="arXiv" 
-          className="w-10 h-10 -mt-2" 
+          width={40}
+          height={40}
+          className="-mt-2" 
         />
       </Link>
       
