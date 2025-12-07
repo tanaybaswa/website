@@ -17,9 +17,9 @@ export const resources: Resource[] = [
     description: "Google's Approach to AI Red Teaming"
   },
   {
-    title: "Google Safe AI Framework",
+    title: "Google Secure AI Framework",
     url: "https://blog.google/technology/safety-security/introducing-googles-secure-ai-framework/",
-    description: "Google's Safe AI Framework"
+    description: "Google's Secure AI Framework"
   },
   {
     title: "Understanding AI Harms",

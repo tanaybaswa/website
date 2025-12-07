@@ -54,7 +54,7 @@ export default function Resources() {
               Resources
             </h1>
             <p className="mt-4 text-xl text-gray-700 dark:text-gray-300 font-light tracking-wide">
-              Useful links and materials for AI safety and security research
+              Useful links and materials for AI security research
             </p>
           </div>
 

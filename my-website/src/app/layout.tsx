@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Tanay Baswa",
-  description: "Tanay Baswa - AI Safety and Security Researcher",
+  description: "Tanay Baswa - AI Security Researcher",
   icons: {
     icon: '/yin_yang.png',
   },

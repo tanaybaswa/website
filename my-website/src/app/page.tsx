@@ -23,14 +23,14 @@ export default function Home() {
               Tanay Baswa
             </h1>
             <p className="mt-4 text-2xl text-gray-700 dark:text-gray-300 font-light tracking-wide">
-              AI Safety & Security Researcher
+              AI Security Researcher
             </p>
           </div>
 
           {/* Bio Section */}
           <div className="prose dark:prose-invert mx-auto space-y-6 text-lg tracking-wide leading-relaxed">
             <p>
-              I am an AI Safety and Security Researcher at Enkrypt AI, where I also serve as Director of Solutions, overseeing sales, system architecture, and engineering.
+              I am an AI Security Researcher at Enkrypt AI, where I also serve as Director of Solutions, overseeing sales, system architecture, and engineering.
             </p>
             
             <p>
@@ -38,11 +38,11 @@ export default function Home() {
             </p>
 
             <p>
-              As AI capabilities continue to advance, this work becomes increasingly critical for ensuring these powerful technologies remain safe and beneficial for humanity.
+              As AI capabilities continue to advance, this work becomes increasingly critical for ensuring these powerful technologies remain secure and beneficial for humanity.
             </p>
 
             <p>
-              Let&apos;s build a safer and stronger future together.
+              Let&apos;s build a stronger and more secure future together.
             </p>
           </div>
           <SocialIconDeck />
