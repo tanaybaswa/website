@@ -38,6 +38,10 @@ export default function Home() {
             </p>
 
             <p>
+              Winning the AI race isn&apos;t just about building the most advanced models—it&apos;s about deploying them securely and reliably in production. Organizations that prioritize security, robust testing, and production-ready infrastructure will outpace competitors who rush to market with vulnerable systems.
+            </p>
+
+            <p>
               As AI capabilities continue to advance, this work becomes increasingly critical for ensuring these powerful technologies remain secure and beneficial for humanity.
             </p>
 
