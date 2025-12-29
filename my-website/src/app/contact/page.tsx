@@ -35,7 +35,7 @@ export default function Contact() {
   useEffect(() => {
     // Check if reCAPTCHA is already loaded
     const checkRecaptcha = () => {
-      if (window.grecaptcha && window.grecaptcha.ready) {
+      if (window.grecaptcha && typeof window.grecaptcha.execute === 'function') {
         setRecaptchaLoaded(true);
       }
     };
@@ -54,7 +54,7 @@ export default function Contact() {
       return;
     }
 
-    if (!window.grecaptcha || !window.grecaptcha.ready) {
+    if (!window.grecaptcha || typeof window.grecaptcha.execute !== 'function') {
       console.error('reCAPTCHA script not loaded');
       alert('reCAPTCHA is still loading. Please wait a moment and try again.');
       return;
@@ -67,26 +67,14 @@ export default function Contact() {
         try {
           const token = await window.grecaptcha.execute(recaptchaSiteKey, { action: 'contact' });
           
-          // Verify token with backend (you'll need to implement this API route)
-          // For now, we'll just check if token exists
+          // Simple check: if token exists, reveal email
           if (token) {
-            // In production, verify the token with your backend
-            // const response = await fetch('/api/verify-recaptcha', {
-            //   method: 'POST',
-            //   body: JSON.stringify({ token }),
-            // });
-            // const data = await response.json();
-            // if (data.success) {
-            //   setIsVerified(true);
-            // }
-            
-            // For now, if token exists, consider it verified
-            // In production, you should verify on the backend
             setIsVerified(true);
+          } else {
+            alert('Verification failed. Please try again.');
           }
         } catch (error: any) {
           console.error('reCAPTCHA verification error:', error);
-          // Check if it's a domain/configuration error
           if (error.message && error.message.includes('Invalid site key')) {
             alert('reCAPTCHA site key is invalid or not configured for this domain. For localhost, please add "localhost" to your allowed domains in the reCAPTCHA admin console.');
           } else {
@@ -254,7 +242,7 @@ export default function Contact() {
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
           onLoad={() => {
-            if (window.grecaptcha) {
+            if (window.grecaptcha && typeof window.grecaptcha.execute === 'function') {
               setRecaptchaLoaded(true);
             }
           }}
