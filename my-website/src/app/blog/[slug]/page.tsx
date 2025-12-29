@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
 /** Components */
-// import RightNavBar from "@/components/RightNavBar";
+import RightNavBar from "@/components/RightNavBar";
 
 /** Blog utilities */
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
@@ -27,7 +27,8 @@ export default async function BlogPost({ params }: PageProps) {
 
   return (
     <div className={`min-h-screen bg-white ${inter.className}`}>
-      <main className="container mx-auto px-4 py-12 max-w-4xl">
+      <RightNavBar />
+      <main className="lg:ml-64 container mx-auto px-4 py-12 max-w-4xl">
         <article className="bg-white rounded-xl p-8 border border-[#212121]/20">
           {/* Header */}
           <header className="mb-8">

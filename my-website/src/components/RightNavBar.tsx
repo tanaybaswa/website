@@ -3,9 +3,9 @@
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
-import { Inter } from 'next/font/google';
+import { DM_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const dmSans = DM_Sans({ subsets: ['latin'] });
 
 const RightNavBar = () => {
   const pathname = usePathname();
@@ -18,8 +18,8 @@ const RightNavBar = () => {
   ];
 
   return (
-    <nav className="fixed right-8 top-8 z-50 hidden lg:block">
-      <div className="flex flex-col items-end space-y-8">
+    <nav className="fixed left-0 top-0 h-full w-64 z-50 hidden lg:block bg-white">
+      <div className="flex flex-col items-start space-y-8 p-8 pt-24">
         {links.map((link) => {
           const isActive = pathname === link.href || 
             (link.href !== "/" && pathname?.startsWith(link.href));
@@ -28,8 +28,8 @@ const RightNavBar = () => {
             <Link
               key={link.href}
               href={link.href}
-              className={`${inter.className} text-2xl text-[#212121] hover:opacity-70 transition-opacity ${
-                isActive ? 'opacity-100 font-medium' : 'opacity-60'
+              className={`${dmSans.className} text-2xl text-[#212121] hover:opacity-70 transition-opacity font-light ${
+                isActive ? 'opacity-100' : 'opacity-60'
               }`}
             >
               {link.label}

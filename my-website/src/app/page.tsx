@@ -2,7 +2,7 @@
 import React from "react";
 
 /** Components */
-// import RightNavBar from "@/components/RightNavBar";
+import RightNavBar from "@/components/RightNavBar";
 import SocialIconDeck from "@/components/SocialIconDeck";
 
 /** Fonts */
@@ -14,7 +14,8 @@ const dmSans = DM_Sans({ subsets: ['latin'] });
 export default function Home() {
   return (
     <div className={`min-h-screen bg-white ${inter.className}`}>
-      <main className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 max-w-4xl">
+      <RightNavBar />
+      <main className="lg:ml-64 container mx-auto px-6 sm:px-8 lg:px-12 py-16 max-w-4xl">
         <div className="space-y-10">
           {/* Hero Section */}
           <div className="space-y-2">
