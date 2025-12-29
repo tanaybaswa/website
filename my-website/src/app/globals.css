@@ -1,15 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary palette */
-  --color-cream: #f8f6f3;
-  --color-taupe: #bba591;
-  --color-vanilla: #faecc3;
-  --color-teal: #00521d;
-  
-  /* System colors */
-  --background: var(--color-cream);
-  --foreground: var(--color-teal);
+  /* Minimal palette */
+  --background: #ffffff;
+  --foreground: #212121;
 }
 
 @theme inline {

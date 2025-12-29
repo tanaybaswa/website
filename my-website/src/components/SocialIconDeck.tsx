@@ -4,10 +4,10 @@ import Image from 'next/image';
 
 const SocialIconDeck = () => {
   return (
-    <div className="flex justify-center space-x-6 mt-8">
+    <div className="flex space-x-6">
       <Link 
         href="https://www.linkedin.com/in/tanaybaswa/"
-        className="text-[#00521d] hover:text-[#003d15] transition-colors duration-200"
+        className="text-[#212121] hover:opacity-70 transition-opacity duration-200"
         aria-label="LinkedIn"
         target='_blank'
       >
@@ -18,7 +18,7 @@ const SocialIconDeck = () => {
       
       <Link 
         href="https://github.com/tanaybaswa" 
-        className="text-[#00521d] hover:text-[#003d15] transition-colors duration-200"
+        className="text-[#212121] hover:opacity-70 transition-opacity duration-200"
         aria-label="GitHub"
         target='_blank'
       >
@@ -29,22 +29,22 @@ const SocialIconDeck = () => {
       
       <Link 
         href="https://arxiv.org/search/cs?searchtype=author&query=Baswa,+T" 
-        className="text-[#00521d] hover:text-[#003d15] transition-colors duration-200"
+        className="text-[#212121] hover:opacity-70 transition-opacity duration-200"
         aria-label="arXiv"
         target="_blank"
       >
         <Image 
-          src="/arxiv.svg" 
+          src="/arxiv-logo.svg" 
           alt="arXiv" 
           width={40}
           height={40}
-          className="-mt-2" 
+          className="mt-1"
         />
       </Link>
       
       <Link 
         href="https://openreview.net/profile?id=~Tanay_Baswa1" 
-        className="text-[#00521d] hover:text-[#003d15] transition-colors duration-200"
+        className="text-[#212121] hover:opacity-70 transition-opacity duration-200"
         aria-label="OpenReview"
         target="_blank"
       >
