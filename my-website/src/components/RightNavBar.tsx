@@ -13,6 +13,7 @@ const RightNavBar = () => {
   const links = [
     { href: "/", label: "Home" },
     { href: "/blog", label: "Blog" },
+    { href: "/research", label: "Research" },
     { href: "/resources", label: "Resources" },
     { href: "/contact", label: "Contact" },
   ];

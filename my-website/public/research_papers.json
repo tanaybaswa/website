@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Sage-rt: Synthetic alignment data generation for safety evaluation and red teaming",
+    "authors": ["A Kumar", "D Kumar", "J Loya", "NA Birur", "T Baswa", "S Agarwal", "P Harshangi"],
+    "citation": "arXiv preprint arXiv:2408.11851",
+    "year": 2024,
+    "month": 11,
+    "link": "https://arxiv.org/abs/2408.11851"
+  },
+  {
+    "title": "No Free Lunch with Guardrails",
+    "authors": ["D Kumar", "NA Birur", "T Baswa", "S Agarwal", "P Harshangi"],
+    "citation": "arXiv preprint arXiv:2504.00441",
+    "year": 2025,
+    "month": 3,
+    "link": "https://arxiv.org/abs/2504.00441"
+  },
+  {
+    "title": "Vera: Validation and enhancement for retrieval augmented systems",
+    "authors": ["NA Birur", "T Baswa", "D Kumar", "J Loya", "S Agarwal", "P Harshangi"],
+    "citation": "arXiv preprint arXiv:2409.15364",
+    "year": 2024,
+    "month": 2,
+    "link": "https://arxiv.org/abs/2409.15364"
+  },
+  {
+    "title": "Beyond Western Politics: Cross-Cultural Benchmarks for Evaluating Partisan Associations in LLMs",
+    "authors": ["D Kumar", "I Gupta", "NA Birur", "T Baswa", "S Agarwal", "P Harshangi"],
+    "citation": "arXiv preprint arXiv:2509.22711",
+    "year": 2025,
+    "month": 1,
+    "link": "https://arxiv.org/abs/2509.22711"
+  },
+  {
+    "title": "Quantifying CBRN Risk in Frontier Models",
+    "authors": ["D Kumar", "NA Birur", "T Baswa", "S Agarwal", "P Harshangi"],
+    "citation": "arXiv preprint arXiv:2510.21133",
+    "year": 2025,
+    "link": "https://arxiv.org/abs/2510.21133"
+  },
+  {
+    "title": "Beyond Text: Multimodal Jailbreaking of Vision-Language and Audio Models through Perceptually Simple Transformations",
+    "authors": ["D Kumar", "S Jena", "NA Birur", "T Baswa", "S Agarwal", "P Harshangi"],
+    "citation": "arXiv preprint arXiv:2510.20223",
+    "year": 2025,
+    "link": "https://arxiv.org/abs/2510.20223"
+  },
+  {
+    "title": "VERA: Validation and Enhancement for Retrieval Augmented systems",
+    "authors": ["N Aravind Birur", "T Baswa", "D Kumar", "J Loya", "S Agarwal", "P Harshangi"],
+    "citation": "arXiv e-prints, arXiv: 2409.15364",
+    "year": 2024,
+    "link": "https://arxiv.org/abs/2409.15364"
+  },
+  {
+    "title": "Efficacy of the SAGE-RT Dataset for Model Safety Alignment: A Comparative Study",
+    "authors": ["T Baswa", "NA Birur", "D Kumar", "J Loya", "A Kumar", "P Harshangi", "S Agarwal"],
+    "citation": "Pluralistic Alignment Workshop at NeurIPS 2024",
+    "year": 2024,
+    "link": "https://openreview.net/pdf?id=wl2vBu8jX4"
+  }
+]

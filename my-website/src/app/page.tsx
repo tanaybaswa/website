@@ -4,6 +4,7 @@ import React from "react";
 /** Components */
 import RightNavBar from "@/components/RightNavBar";
 import SocialIconDeck from "@/components/SocialIconDeck";
+// import YinYangParticles from "@/components/YinYangParticles";
 
 /** Fonts */
 import { Inter, DM_Sans } from 'next/font/google';
@@ -56,6 +57,17 @@ export default function Home() {
           </div>
         </div>
       </main>
+      
+      {/* Particle Animation - Right Side (Fixed Overlay) - Currently Hidden */}
+      {/* <div className="hidden lg:block fixed right-8 top-0 w-96 h-screen pointer-events-none z-10">
+        <div className="w-full h-full relative pointer-events-auto">
+          <YinYangParticles 
+            particleCount={6000}
+            interactionRadius={120}
+            className="w-full h-full"
+          />
+        </div>
+      </div> */}
     </div>
   );
 }
