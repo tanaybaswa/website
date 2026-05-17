@@ -24,7 +24,7 @@ export default function Home() {
 
           <div className="mt-24 space-y-8">
             <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
-              Building something new in Longevity + AI
+              Interests: Longevity, Neurotech, AI
             </p>
             <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
               Previously, I was the first hire at Enkrypt AI.
