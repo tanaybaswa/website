@@ -16,13 +16,13 @@ export default function Home() {
   return (
     <div className={`min-h-screen bg-white ${inter.className}`}>
       <RightNavBar />
-      <main className="lg:ml-64 container mx-auto px-6 sm:px-8 lg:px-12 py-16 max-w-4xl">
-        <div className="space-y-10">
-          {/* Hero */}
-          <div className="space-y-6 max-w-2xl">
-            <h1 className={`text-4xl sm:text-5xl font-light tracking-tight ${dmSans.className} leading-tight text-[#212121]`}>
-              Tanay Baswa
-            </h1>
+      <main className="lg:ml-64 container mx-auto px-6 sm:px-8 lg:px-12 pt-16 pb-24 max-w-4xl">
+        <div className="max-w-2xl">
+          <h1 className={`text-4xl sm:text-5xl font-light tracking-tight ${dmSans.className} leading-tight text-[#212121]`}>
+            Tanay Baswa
+          </h1>
+
+          <div className="mt-24 space-y-8">
             <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
               Building something new in Longevity + AI
             </p>
@@ -31,8 +31,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Social Links */}
-          <div className="pt-8">
+          <div className="mt-32">
             <SocialIconDeck />
           </div>
         </div>
