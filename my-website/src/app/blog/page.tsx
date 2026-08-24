@@ -1,12 +1,16 @@
 /** Main Imports */
 import React from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 /** Components */
 import RightNavBar from "@/components/RightNavBar";
 
 /** Blog utilities */
 import { getAllPosts } from "@/lib/blog";
+
+/** Config */
+import { features } from "@/config/features";
 
 /** Fonts */
 import { Inter, DM_Sans } from 'next/font/google';
@@ -15,6 +19,11 @@ const inter = Inter({ subsets: ['latin'] });
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
 export default async function Blog() {
+  // Blog is flagged off for now; the page below is left intact.
+  if (!features.blog) {
+    notFound();
+  }
+
   const allPosts = await getAllPosts();
 
   return (

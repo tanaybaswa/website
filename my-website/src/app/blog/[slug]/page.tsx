@@ -7,6 +7,9 @@ import RightNavBar from "@/components/RightNavBar";
 /** Blog utilities */
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
 
+/** Config */
+import { features } from '@/config/features';
+
 /** Fonts */
 import { Inter, DM_Sans } from 'next/font/google';
 
@@ -18,6 +21,11 @@ interface PageProps {
 }
 
 export default async function BlogPost({ params }: PageProps) {
+  // Blog is flagged off for now; the post rendering below is left intact.
+  if (!features.blog) {
+    notFound();
+  }
+
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -95,6 +103,10 @@ export default async function BlogPost({ params }: PageProps) {
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
+  if (!features.blog) {
+    return [];
+  }
+
   const posts = await getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
@@ -104,7 +116,7 @@ export async function generateStaticParams() {
 // Generate metadata for each post (for SEO)
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = features.blog ? await getPostBySlug(slug) : null;
 
   if (!post) {
     return {

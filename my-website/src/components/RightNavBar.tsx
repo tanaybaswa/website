@@ -5,18 +5,21 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import { DM_Sans } from 'next/font/google';
 
+/** Config */
+import { features } from "@/config/features";
+
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
 const RightNavBar = () => {
   const pathname = usePathname();
 
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/blog", label: "Blog" },
-    { href: "/research", label: "Research" },
-    { href: "/resources", label: "Resources" },
-    { href: "/contact", label: "Contact" },
-  ];
+    { href: "/", label: "Home", enabled: true },
+    { href: "/blog", label: "Blog", enabled: features.blog },
+    { href: "/research", label: "Research", enabled: true },
+    { href: "/resources", label: "Resources", enabled: true },
+    { href: "/contact", label: "Contact", enabled: true },
+  ].filter((link) => link.enabled);
 
   return (
     <nav className="fixed left-0 top-0 h-full w-64 z-50 hidden lg:block bg-white">
