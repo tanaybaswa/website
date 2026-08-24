@@ -5,7 +5,7 @@ import React from "react";
 import RightNavBar from "@/components/RightNavBar";
 
 /** Data */
-import { resources } from "@/data/resources";
+import { resources, resourceCategories } from "@/data/resources";
 
 /** Fonts */
 import { Inter, DM_Sans } from 'next/font/google';
@@ -14,6 +14,13 @@ const inter = Inter({ subsets: ['latin'] });
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
 export default function Resources() {
+  const sections = resourceCategories
+    .map((category) => ({
+      category,
+      items: resources.filter((resource) => resource.category === category),
+    }))
+    .filter((section) => section.items.length > 0);
+
   return (
     <div className={`min-h-screen bg-white ${inter.className}`}>
       <RightNavBar />
@@ -25,37 +32,56 @@ export default function Resources() {
               Resources
             </h1>
             <p className={`text-base sm:text-lg text-[#212121]/70 font-light tracking-wide ${inter.className}`}>
-              Useful links and materials for AI security research
+              Recent coverage, writing, and work in AI security
             </p>
           </div>
 
-          {/* Resources List */}
-          <div className="space-y-6">
-            {resources.length > 0 ? (
-              resources.map((resource, index) => (
-                <article key={index} className="space-y-2">
-                  <h2 className={`text-base font-light tracking-tight ${dmSans.className} text-[#212121]`}>
-                    <a 
-                      href={resource.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="hover:opacity-70 transition-opacity"
-                    >
-                      {resource.title}
-                    </a>
+          {/* Grouped Resources */}
+          <div className="space-y-14">
+            {sections.length > 0 ? (
+              sections.map((section) => (
+                <section key={section.category} className="space-y-8">
+                  <h2 className={`text-xs uppercase tracking-[0.2em] text-[#212121]/40 font-light border-b border-[#212121]/10 pb-3 ${inter.className}`}>
+                    {section.category}
                   </h2>
-                  <p className={`text-base text-[#212121] font-light leading-relaxed tracking-wide ${inter.className}`}>
-                    {resource.description}
-                  </p>
-                  <a 
-                    href={resource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-block text-[#212121] hover:opacity-70 font-light text-sm transition-opacity ${inter.className}`}
-                  >
-                    Visit resource →
-                  </a>
-                </article>
+
+                  <div className="space-y-10">
+                    {section.items.map((resource) => (
+                      <article key={resource.url} className="space-y-2">
+                        <h3 className={`text-lg font-light tracking-tight ${dmSans.className} text-[#212121] leading-snug`}>
+                          <a
+                            href={resource.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:opacity-70 transition-opacity"
+                          >
+                            {resource.title}
+                          </a>
+                        </h3>
+                        <div className={`flex items-center gap-3 text-sm text-[#212121]/60 font-light ${inter.className}`}>
+                          <span>{resource.source}</span>
+                          {resource.date && (
+                            <>
+                              <span>·</span>
+                              <span>{resource.date}</span>
+                            </>
+                          )}
+                        </div>
+                        <p className={`text-base text-[#212121] font-light leading-relaxed tracking-wide ${inter.className}`}>
+                          {resource.description}
+                        </p>
+                        <a
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-block text-[#212121] hover:opacity-70 font-light text-sm transition-opacity ${inter.className}`}
+                        >
+                          Visit resource →
+                        </a>
+                      </article>
+                    ))}
+                  </div>
+                </section>
               ))
             ) : (
               <div className="space-y-4">

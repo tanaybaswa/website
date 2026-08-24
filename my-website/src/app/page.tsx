@@ -27,7 +27,16 @@ export default function Home() {
               Interests: Longevity, Neurotech, AI
             </p>
             <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
-              Previously, I was the first hire at Enkrypt AI.
+              Previously, I was the first hire at Enkrypt AI, which has been{" "}
+              <a
+                href="https://www.anaconda.com/press/anaconda-acquires-enkrypt-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-[#212121]/20 hover:border-[#212121] transition-colors"
+              >
+                acquired by Anaconda
+              </a>
+              .
             </p>
           </div>
 
