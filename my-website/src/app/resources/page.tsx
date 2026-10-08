@@ -8,10 +8,10 @@ import RightNavBar from "@/components/RightNavBar";
 import { resources, resourceCategories } from "@/data/resources";
 
 /** Fonts */
-import { Inter, DM_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { GeistPixelLine } from 'geist/font/pixel';
 
 const inter = Inter({ subsets: ['latin'] });
-const dmSans = DM_Sans({ subsets: ['latin'] });
 
 export default function Resources() {
   const sections = resourceCategories
@@ -28,7 +28,7 @@ export default function Resources() {
         <div className="space-y-10">
           {/* Header Section */}
           <div className="space-y-2">
-            <h1 className={`text-4xl sm:text-5xl font-light tracking-tight ${dmSans.className} leading-tight text-[#212121]`}>
+            <h1 className={`text-4xl sm:text-5xl font-medium tracking-tight ${GeistPixelLine.className} leading-tight text-[#212121]`}>
               Resources
             </h1>
             <p className={`text-base sm:text-lg text-[#212121]/70 font-light tracking-wide ${inter.className}`}>
@@ -48,7 +48,7 @@ export default function Resources() {
                   <div className="space-y-10">
                     {section.items.map((resource) => (
                       <article key={resource.url} className="space-y-2">
-                        <h3 className={`text-lg font-light tracking-tight ${dmSans.className} text-[#212121] leading-snug`}>
+                        <h3 className={`text-lg font-medium tracking-tight ${GeistPixelLine.className} text-[#212121] leading-snug`}>
                           <a
                             href={resource.url}
                             target="_blank"

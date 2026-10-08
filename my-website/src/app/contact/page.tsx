@@ -11,6 +11,7 @@ import Script from "next/script";
 
 /** Fonts */
 import { Inter, DM_Sans } from 'next/font/google';
+import { GeistPixelLine } from 'geist/font/pixel';
 
 const inter = Inter({ subsets: ['latin'] });
 const dmSans = DM_Sans({ subsets: ['latin'] });
@@ -97,7 +98,7 @@ export default function Contact() {
         <div className="space-y-12">
           {/* Header Section */}
           <div className="space-y-2">
-            <h1 className={`text-4xl sm:text-5xl font-light tracking-tight ${dmSans.className} leading-tight text-[#212121]`}>
+            <h1 className={`text-4xl sm:text-5xl font-medium tracking-tight ${GeistPixelLine.className} leading-tight text-[#212121]`}>
               Contact
             </h1>
             <p className={`text-base sm:text-lg text-[#212121]/70 font-light tracking-wide ${inter.className}`}>

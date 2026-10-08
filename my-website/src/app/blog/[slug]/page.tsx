@@ -11,10 +11,10 @@ import { getPostBySlug, getAllPosts } from '@/lib/blog';
 import { features } from '@/config/features';
 
 /** Fonts */
-import { Inter, DM_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { GeistPixelLine } from 'geist/font/pixel';
 
 const inter = Inter({ subsets: ['latin'] });
-const dmSans = DM_Sans({ subsets: ['latin'] });
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -63,7 +63,7 @@ export default async function BlogPost({ params }: PageProps) {
               <span className={`text-[#212121]/60 text-sm ${inter.className}`}>{post.readTime}</span>
             </div>
             
-            <h1 className={`text-4xl font-bold mb-4 text-[#212121] ${dmSans.className} leading-tight`}>
+            <h1 className={`text-4xl font-medium tracking-tight mb-4 text-[#212121] ${GeistPixelLine.className} leading-tight`}>
               {post.title}
             </h1>
             
@@ -82,7 +82,7 @@ export default async function BlogPost({ params }: PageProps) {
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <footer className="mt-12 pt-8 border-t border-[#212121]/20">
-              <h3 className={`text-lg font-medium mb-4 text-[#212121] ${dmSans.className}`}>Tags</h3>
+              <h3 className={`text-lg font-medium tracking-tight mb-4 text-[#212121] ${GeistPixelLine.className}`}>Tags</h3>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span

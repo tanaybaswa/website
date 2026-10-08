@@ -10,10 +10,10 @@ import RightNavBar from "@/components/RightNavBar";
 import { researchPapers } from "@/data/research";
 
 /** Fonts */
-import { Inter, DM_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { GeistPixelLine } from 'geist/font/pixel';
 
 const inter = Inter({ subsets: ['latin'] });
-const dmSans = DM_Sans({ subsets: ['latin'] });
 
 function getMonthName(month?: number): string {
   if (!month) return '';
@@ -67,7 +67,7 @@ export default function Research() {
         <div className="space-y-10">
           {/* Header Section */}
           <div className="space-y-2">
-            <h1 className={`text-4xl sm:text-5xl font-light tracking-tight ${dmSans.className} leading-tight text-[#212121]`}>
+            <h1 className={`text-4xl sm:text-5xl font-medium tracking-tight ${GeistPixelLine.className} leading-tight text-[#212121]`}>
               Research
             </h1>
             <p className={`text-base sm:text-lg text-[#212121]/70 font-light tracking-wide ${inter.className}`}>
@@ -95,7 +95,7 @@ export default function Research() {
                     <div className="space-y-4">
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
-                          <h2 className={`flex-1 text-lg font-light tracking-tight ${dmSans.className} text-[#212121] leading-snug`}>
+                          <h2 className={`flex-1 text-lg font-medium tracking-tight ${GeistPixelLine.className} text-[#212121] leading-snug`}>
                             <a 
                               href={paper.link} 
                               target="_blank" 

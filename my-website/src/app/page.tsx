@@ -7,10 +7,10 @@ import SocialIconDeck from "@/components/SocialIconDeck";
 // import YinYangParticles from "@/components/YinYangParticles";
 
 /** Fonts */
-import { Inter, DM_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { GeistPixelLine } from 'geist/font/pixel';
 
 const inter = Inter({ subsets: ['latin'] });
-const dmSans = DM_Sans({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
       <RightNavBar />
       <main className="lg:ml-64 container mx-auto px-6 sm:px-8 lg:px-12 pt-16 pb-24 max-w-4xl">
         <div className="max-w-2xl">
-          <h1 className={`text-4xl sm:text-5xl font-light tracking-tight ${dmSans.className} leading-tight text-[#212121]`}>
+          <h1 className={`text-4xl sm:text-5xl font-medium tracking-tight ${GeistPixelLine.className} leading-tight text-[#212121]`}>
             Tanay Baswa
           </h1>
 

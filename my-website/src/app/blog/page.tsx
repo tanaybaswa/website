@@ -13,10 +13,10 @@ import { getAllPosts } from "@/lib/blog";
 import { features } from "@/config/features";
 
 /** Fonts */
-import { Inter, DM_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { GeistPixelLine } from 'geist/font/pixel';
 
 const inter = Inter({ subsets: ['latin'] });
-const dmSans = DM_Sans({ subsets: ['latin'] });
 
 export default async function Blog() {
   // Blog is flagged off for now; the page below is left intact.
@@ -33,7 +33,7 @@ export default async function Blog() {
         <div className="space-y-10">
           {/* Header Section */}
           <div className="space-y-2">
-            <h1 className={`text-4xl sm:text-5xl font-light tracking-tight ${dmSans.className} leading-tight text-[#212121]`}>
+            <h1 className={`text-4xl sm:text-5xl font-medium tracking-tight ${GeistPixelLine.className} leading-tight text-[#212121]`}>
               Blog
             </h1>
             <p className={`text-base sm:text-lg text-[#212121]/70 font-light tracking-wide ${inter.className}`}>
@@ -47,7 +47,7 @@ export default async function Blog() {
               allPosts.map((post) => (
                 <article key={post.slug} className="space-y-4">
                   <div className="space-y-2">
-                    <h2 className={`text-2xl font-light tracking-tight ${dmSans.className} text-[#212121]`}>
+                    <h2 className={`text-2xl font-medium tracking-tight ${GeistPixelLine.className} text-[#212121]`}>
                       <Link 
                         href={`/blog/${post.slug}`} 
                         className="hover:opacity-70 transition-opacity"
