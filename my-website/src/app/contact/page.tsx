@@ -1,13 +1,10 @@
-"use client";
-
 /** Main Imports */
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 /** Components */
 import RightNavBar from "@/components/RightNavBar";
 import Image from "next/image";
 import { FaGoogleScholar } from "react-icons/fa6";
-import Script from "next/script";
 
 /** Fonts */
 import { Inter, DM_Sans } from 'next/font/google';
@@ -16,81 +13,7 @@ import { GeistPixelLine } from 'geist/font/pixel';
 const inter = Inter({ subsets: ['latin'] });
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
-declare global {
-  interface Window {
-    grecaptcha: {
-      ready: (callback: () => void) => void;
-      execute: (siteKey: string, options: { action: string }) => Promise<string>;
-    };
-  }
-}
-
 export default function Contact() {
-  const [isVerified, setIsVerified] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
-
-  // Get reCAPTCHA site key from environment variable
-  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
-
-  useEffect(() => {
-    // Check if reCAPTCHA is already loaded
-    const checkRecaptcha = () => {
-      if (window.grecaptcha && typeof window.grecaptcha.execute === 'function') {
-        setRecaptchaLoaded(true);
-      }
-    };
-    
-    checkRecaptcha();
-    // Also check periodically in case script loads after component mounts
-    const interval = setInterval(checkRecaptcha, 100);
-    
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleVerify = async () => {
-    if (!recaptchaSiteKey) {
-      console.error('reCAPTCHA site key not configured');
-      alert('reCAPTCHA is not configured. Please add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to your environment variables.');
-      return;
-    }
-
-    if (!window.grecaptcha || typeof window.grecaptcha.execute !== 'function') {
-      console.error('reCAPTCHA script not loaded');
-      alert('reCAPTCHA is still loading. Please wait a moment and try again.');
-      return;
-    }
-
-    setIsLoading(true);
-    
-    try {
-      window.grecaptcha.ready(async () => {
-        try {
-          const token = await window.grecaptcha.execute(recaptchaSiteKey, { action: 'contact' });
-          
-          // Simple check: if token exists, reveal email
-          if (token) {
-            setIsVerified(true);
-          } else {
-            alert('Verification failed. Please try again.');
-          }
-        } catch (error: any) {
-          console.error('reCAPTCHA verification error:', error);
-          if (error.message && error.message.includes('Invalid site key')) {
-            alert('reCAPTCHA site key is invalid or not configured for this domain. For localhost, please add "localhost" to your allowed domains in the reCAPTCHA admin console.');
-          } else {
-            alert('Verification failed. Please try again.');
-          }
-        } finally {
-          setIsLoading(false);
-        }
-      });
-    } catch (error) {
-      console.error('Error verifying reCAPTCHA:', error);
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div className={`min-h-screen bg-white ${inter.className}`}>
       <RightNavBar />
@@ -195,55 +118,23 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Email Section with reCAPTCHA */}
+          {/* Email */}
           <div className="space-y-6">
             <p className={`text-base text-[#212121] font-light leading-relaxed tracking-wide ${dmSans.className}`}>
               Email
             </p>
-            {!isVerified ? (
-              <div className="space-y-3">
-                <button
-                  onClick={handleVerify}
-                  disabled={isLoading || !recaptchaLoaded}
-                  className={`px-0 py-1 border-b border-[#212121]/20 hover:border-[#212121] 
-                    transition-colors text-sm text-[#212121] font-light ${inter.className} 
-                    ${isLoading || !recaptchaLoaded ? 'opacity-50 cursor-not-allowed' : ''}`}
-                >
-                  {isLoading ? 'Verifying...' : 'Verify to reveal email'}
-                </button>
-              </div>
-            ) : (
-              <div className="space-y-2">
-                <a 
-                  href="mailto:tanay_baswa@yahoo.com"
-                  className={`flex items-center gap-2 text-base text-[#212121] hover:opacity-70 font-light transition-opacity ${inter.className}`}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span>tanay_baswa@yahoo.com</span>
-                </a>
-              </div>
-            )}
+            <a 
+              href="mailto:tanay_baswa@yahoo.com"
+              className={`flex items-center gap-2 text-base text-[#212121] hover:opacity-70 font-light transition-opacity ${inter.className}`}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>tanay_baswa@yahoo.com</span>
+            </a>
           </div>
         </div>
       </main>
-      
-      {/* Load reCAPTCHA script */}
-      {recaptchaSiteKey && (
-        <Script
-          src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
-          onLoad={() => {
-            if (window.grecaptcha && typeof window.grecaptcha.execute === 'function') {
-              setRecaptchaLoaded(true);
-            }
-          }}
-          onError={() => {
-            console.error('Failed to load reCAPTCHA script');
-          }}
-          strategy="lazyOnload"
-        />
-      )}
     </div>
   );
 }
