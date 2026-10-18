@@ -27,6 +27,24 @@ export default function Home() {
               Interests: Longevity, Neurotech, AI
             </p>
             <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
+              I&apos;m the first hire at{" "}
+              <a
+                href="https://vizco.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-[#212121]/20 hover:border-[#212121] transition-colors"
+              >
+                VizCo
+              </a>
+              , building insurable AI.
+            </p>
+            <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
+              Insurance made fire, electricity, and the automobile safe enough
+              to live with.
+              <br />
+              Intelligence is next.
+            </p>
+            <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
               Previously, I was the first hire at Enkrypt AI, which has been{" "}
               <a
                 href="https://www.anaconda.com/press/anaconda-acquires-enkrypt-ai"
