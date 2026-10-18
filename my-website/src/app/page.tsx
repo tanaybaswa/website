@@ -56,6 +56,11 @@ export default function Home() {
               </a>
               .
             </p>
+            <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
+              There, I broke some of the world&apos;s most important AI systems
+              before anyone else could, and learned how a company is built from
+              zero.
+            </p>
           </div>
 
           <div className="mt-32">
