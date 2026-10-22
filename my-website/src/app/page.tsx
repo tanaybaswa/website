@@ -24,7 +24,7 @@ export default function Home() {
 
           <div className="mt-24 space-y-8">
             <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
-              Interests: Longevity, Neurotech, AI
+              Interests: Longevity, Neurotech, AI, Insurance
             </p>
             <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
               I&apos;m the first hire at{" "}
