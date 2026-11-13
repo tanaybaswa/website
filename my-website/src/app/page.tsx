@@ -27,7 +27,7 @@ export default function Home() {
               Interests: Longevity, Neurotech, AI, Insurance
             </p>
             <p className="text-base text-[#212121] font-light leading-relaxed tracking-wide">
-              I&apos;m the first hire at{" "}
+              I&apos;m Co-Founder at{" "}
               <a
                 href="https://vizco.co"
                 target="_blank"
